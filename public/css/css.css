@@ -1,0 +1,193 @@
+body{
+  background: #2e3233;
+  margin: 0;
+  font-size: 14px;
+  font-family: sans-serif;
+}
+
+h1{
+  color: #2f2f2f;
+  font-family: 'Unica One', serif;
+  font-weight: bold;
+  margin: 0;
+  font-size: 4em;
+  text-transform: uppercase;
+}
+
+#header{
+  padding: 40px;
+  background: #f2f2f2;
+  text-align: center;
+  border-bottom: 20px solid #d15635;
+  box-shadow: 0px 4px 0px 0px rgba(176, 83, 58, 0.74);
+}
+
+#header a.action-button{
+  background: #b5d0d0;
+  width: 211px;
+  margin: 10px auto -20px auto;
+}
+
+a.action-button{
+  font-family: MavenPro, sans-serif;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: 2px;
+  padding: 5px 0;
+  display: block;
+  color: #fff;
+}
+
+#header a.action-button:hover{
+  background: #8ebdbc;
+}
+
+#header a.action-button:active{
+  background: #7ab77e;
+}
+
+#header #new-idea{
+  width: 400px;
+  overflow: hidden;
+  margin: 20px auto;
+  display: none;
+}
+
+#header #new-idea input#idea-title, #header #new-idea textarea#idea-description{
+  display: block;
+  border: none;
+  padding: 7px;
+  margin: 0;
+  width: 386px;
+  margin: 10px 0;
+}
+
+#header #new-idea input#idea-title:focus, #header #new-idea textarea#idea-description:focus{
+  border: none;
+}
+
+#header #new-idea textarea#idea-description{
+  height: 300px;
+  font-family: monospace;
+}
+
+#header #new-idea a.action-button{
+  margin: 10px 5px;
+  display: inline-block;
+  width: 178px;
+}
+
+#idea-list{
+  width: 700px;
+  background: #dbe3e5;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+#idea-list .single-idea{
+  width: 700px;
+  float: left;
+  background: #fff;
+}
+
+#idea-list .single-idea .idea-details{
+  padding: 40px 40px 0 40px;
+}
+
+#idea-list .single-idea .idea-details h2{
+  font-family: ShareTechMono, monospace;
+  margin: 0;
+  font-weight: normal;
+  font-size: 20px;
+}
+
+#idea-list .single-idea .idea-details h2 a{
+  color: #11a11b;
+  text-decoration: underline;
+}
+
+#idea-list .single-idea p{
+  font-family: Esteban, serif;
+  margin: 5px 0;
+}
+
+#idea-list .single-idea .idea-actions-bar{
+  display: block;
+  background: #dbe3e5;
+  color: #809499;
+  margin: 20px 0 0 0;
+  padding: 0 40px;
+  overflow: hidden;
+}
+
+#idea-list .single-idea .idea-actions-bar span.bar-item{
+  font-family: MavenPro, sans-serif;
+  text-transform: uppercase;
+  border-right: 1px solid #c1cdd0;
+  padding: 5px 10px;
+  float: left;
+  font-size: 12px
+}
+
+#idea-list .single-idea .idea-actions-bar span.bar-item:first-child{
+  border-left: 1px solid #c1cdd0;
+}
+  
+
+#idea-list .single-idea .idea-actions-bar span.bar-item a{
+  color: #809499;
+  text-decoration: none;
+}
+
+#idea-list .single-idea .idea-actions-bar span.date-author{
+  float: right;
+  border-left: 1px solid #c1cdd0;
+}
+
+#idea-list #comments{
+  background: #dbe3e5;
+  display: none;
+  float: right;
+  width: 0;
+  font-family: esteban, serif;
+  overflow: hidden;
+}
+
+#idea-list #comments h3{
+  font-family: MavenPro, sans-serif;
+  color: #809499;
+  font-size: 1em;
+  padding: 10px;
+  margin: 0;
+  text-transform: uppercase;
+  text-align: center;
+  border-bottom: 1px solid #c1cdd0;
+}
+
+#idea-list #comments .single-comment{
+  width: 300px;
+}
+
+@font-face{
+  font-family: 'Unica One';
+  font-style: normal;
+  src: local('Unica One'), url(Unica_One/UnicaOne-Regular.ttf) format('truetype');
+}
+
+@font-face{
+  font-family: 'ShareTechMono';
+  font-style: normal;
+  src: local('ShareTechMono'), url(Share_Tech_Mono/ShareTechMono-Regular.ttf) format('truetype');
+}
+
+@font-face{
+  font-family: 'Esteban';
+  font-style: normal;
+  src: local('Esteban'), url(Esteban/Esteban-Regular.ttf) format('truetype');
+}
+
+@font-face{
+  font-family: 'MavenPro';
+  font-style: bold;
+  src: local('MavenPro'), url(Maven_Pro/MavenPro-Bold.ttf) format('truetype');
+}

@@ -1,11 +1,72 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
-    <title>{{ title }}</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title>Idea Cave</title>
+    <link rel="stylesheet" type="text/css" href="css/css.css">
+    <script src="js/vendor/zepto.min.js"></script>
+    <script src="js/vendor/underscore-min.js"></script>
+    <script src="js/vendor/backbone-min.js"></script>
   </head>
   <body>
-    <h1>{{ title }}</h1>
-    <p>Welcome to {{ title }}</p>
+    <div id="header">
+      <h1>Idea Cave</h1>
+      <a href="#/new" class="action-button">New Idea</a>
+      <div id="new-idea">
+        <input type="text" placeholder="Title" id="idea-title"></input>
+        <textarea placeholder="description" id="idea-description"></textarea>
+        <a href="#" id="cancel-idea" class="action-button">Cancel</a>
+        <a href="#" id="submit-idea" class="action-button">Submit</a>
+      </div>
+    </div>
+    <div id="idea-list">
+      <div id="comments">
+        <h3>Comments</h3>
+        <div class="single-comment">
+          <p>Blah Blah ho ho</p>
+        </div>
+        <div class="single-comment">
+          <p>Need to write something that will take up at least two lines. Not sure how much longer I have to write for. I think a few more words should do the trick.</p>
+        </div>
+        <div class="single-comment">
+          <p>Blah Blah ho ho</p>
+        </div>
+      </div><!-- comments -->
+
+      <div class="single-idea">
+        <div class="idea-details">
+          <h2><a href="#">Something </a></h2>
+          <p>yes here is a something</p>
+        </div>
+
+        <div class="idea-actions-bar">
+          <span class="bar-item">12 comments</span>
+          <span class="bar-item"><a href="#">Edit</a></span>
+          <span class="bar-item date-author">Submitted on 12 Jun 2013 by Nafis</span>
+        </div>
+      </div><!-- single-idea -->
+
+    </div><!-- idea-list -->
+
+  <script type="text/template" id="single-idea-template">
+      <div class="idea-details">
+        <h2><a href="#/ideas/{{ id }}">{{ title }}</a></h2>
+        <p>{{ description }}</p>
+      </div>
+
+      <div class="idea-actions-bar">
+        <span class="bar-item">12 comments</span>
+        <span class="bar-item"><a href="#">Edit</a></span>
+        <span class="bar-item date-author">Submitted on {{ date }} by Nafis</span>
+      </div>
+  </script>
+
+  <script src="js/vendor/mustache-min.js"></script>
+  <script src="js/models/post.js"></script>
+  <script src="js/collections/idea-list.js"></script>
+  <script src="js/views/header.js"></script>
+  <script src="js/views/ideas.js"></script>
+  <script src="js/views/single-idea.js"></script>
+  <script src="js/transitions.js"></script>
+  <script src="js/app.js"></script>
   </body>
 </html>

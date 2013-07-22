@@ -1,13 +1,12 @@
+var express = require('express');
+var routes = require('./routes');
+var user = require('./routes/user');
+var http = require('http');
+var path = require('path');
+var passport = require('passport');
+var flash = require('connect-flash');
 
-/**
- * Module dependencies.
- */
-
-var express = require('express')
-  , routes = require('./routes')
-  , user = require('./routes/user')
-  , http = require('http')
-  , path = require('path');
+var auth = require('./auth');
 
 var app = express();
 
@@ -19,8 +18,14 @@ app.use(express.favicon());
 app.use(express.logger('dev'));
 app.use(express.bodyParser());
 app.use(express.methodOverride());
-app.use(express.cookieParser('your secret here'));
-app.use(express.session());
+require('crypto').randomBytes(64, function(err, buf) {
+  if (err) throw err;
+  app.use(express.cookieParser(buf.toString('hex')));
+  app.use(express.session());
+});
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(flash());
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -30,7 +35,11 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', routes.index);
-app.get('/users', user.list);
+app.get('/register', user.getRegister);
+app.post('/register', user.newUser);
+app.get('/login', user.getLogin);
+app.post('/login', user.login);
+app.get('/logout', user.logout);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

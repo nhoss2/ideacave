@@ -1,0 +1,39 @@
+#installation-form{
+  color: white;
+  width: 800px;
+  margin: 0 auto;
+  margin-top: 50px;
+  text-align: center;
+}
+
+#installation-form input{
+  font-family: ShareTechMono, monospace;
+  padding: 10px;
+  background: #4d5557;
+  border: 1px solid #181818;
+  color: #fff;
+  width: 400px;
+  font-size: 18px;
+  display: inline-block;
+  margin: 10px 0;
+}
+
+#installation-form input[type="submit"]{
+  background: #30a843;
+  color: #f0f0f0;
+}
+
+#installation-form h2{
+  margin: 10px;
+  font-family: MavenPro, sans-serif;
+  font-size: 24px;
+  color: #fff;
+}
+
+#error-message{
+  width: 400px;
+  text-align: center;
+  margin: 10px auto;
+  background: #993434;
+}
+

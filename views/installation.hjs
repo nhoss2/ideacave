@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Create an admin account</title>
+    <link rel="stylesheet" type="text/css" href="css/css.css">
+    <link rel="stylesheet" type="text/css" href="css/installation.css">
+  </head>
+  <body>
+    <div id="header">
+      <h1>Idea Cave</h1>
+    </div>
+    <div id="installation-form">
+      <h2>Create Administrator</h2>
+      <div id="error-message">{{ error }}</div>
+      <form action="/registerAdmin" method="post">
+        <input type="text" placeholder="your name" name="name"/>
+        <input type="text" placeholder="email address" name="username"/>
+        <input type="password" placeholder="password" name="password"/>
+        <input type="submit" value="Create Account"/>
+      </form>
+    </div>
+  </body>
+</html>

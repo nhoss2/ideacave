@@ -17,6 +17,10 @@
         <a href="#" id="cancel-idea" class="action-button">Cancel</a>
         <a href="#" id="submit-idea" class="action-button">Submit</a>
       </div>
+      <div id="authentication-bar">
+        <a href="#/login">Login</a>
+        <a href="#/register">Register</a>
+      </div>
     </div>
     <div id="idea-list">
       <div id="comments">

@@ -77,6 +77,26 @@ a.action-button{
   width: 178px;
 }
 
+#header #authentication-bar{
+  display: block;
+  position: absolute;
+  right: 10px;
+  top: 20px;
+  overflow: hidden;
+  font-family: ShareTechMono, monospace;
+}
+
+#header #authentication-bar a{
+  color: #636363;
+  padding: 20px;
+  display: inline;
+  border: 1px solid #ccd7d8;
+  border-width: 1px 0 1px 1px;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
 #idea-list{
   width: 700px;
   background: #dbe3e5;

@@ -1,12 +1,14 @@
 var express = require('express');
-var routes = require('./routes');
-var user = require('./routes/user');
 var http = require('http');
 var path = require('path');
+var routes = require('./routes');
+var user = require('./routes/user');
 var passport = require('passport');
 var flash = require('connect-flash');
 
 var auth = require('./auth');
+var jsonfile = require('./jsonfile');
+jsonfile.init();
 
 var app = express();
 
@@ -18,11 +20,8 @@ app.use(express.favicon());
 app.use(express.logger('dev'));
 app.use(express.bodyParser());
 app.use(express.methodOverride());
-require('crypto').randomBytes(64, function(err, buf) {
-  if (err) throw err;
-  app.use(express.cookieParser(buf.toString('hex')));
-  app.use(express.session());
-});
+app.use(express.cookieParser(require('crypto').randomBytes(64).toString('hex')));
+app.use(express.session());
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
@@ -35,9 +34,8 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', routes.index);
-app.get('/register', user.getRegister);
 app.post('/register', user.newUser);
-app.get('/login', user.getLogin);
+app.post('/registerAdmin', user.newAdmin);
 app.post('/login', user.login);
 app.get('/logout', user.logout);
 

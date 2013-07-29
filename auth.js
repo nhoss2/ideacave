@@ -51,7 +51,7 @@ module.exports = {
   // callback function takes two inputs:
   //   - a string if there is an error, or null.
   //   - the user object if registration successful
-  newUser: function(email, password, callback){
+  newUser: function(email, name, password, callback){
 
     // check if valid email
     try{
@@ -67,6 +67,12 @@ module.exports = {
       return callback(err.message);
     }
 
+    // check for name
+    try{
+      check(name, 'Please enter name').len(1);
+    } catch (err) {
+      return callback(err.message);
+    }
 
     // check if user exists already
     find({email: email}, function(user){
@@ -79,7 +85,8 @@ module.exports = {
 
           database.insert({
             email: email,
-            password: hash
+            password: hash,
+            name: name
           }, function(err, newDoc){
             if (err) {
               throw err;
@@ -94,6 +101,12 @@ module.exports = {
 
   },
 
+  // add an attribute to a user, like giving them admin
+  addAttributes: function(userId, attribute){
+    database.update({_id: userId}, {$set: attribute}, {}, function(err){
+      if (err) throw err;
+    });
+  },
 
   // middleware for pages which need user to be logged in
   ensureAuthenticated: function(req, res, next){

@@ -28,6 +28,10 @@ app.use(flash());
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
 
+// make HJS tempates not use {{ }} as their delimeters and
+// instead use <% %>
+app.locals.delimiters = '<% %>';
+
 // development only
 if ('development' == app.get('env')) {
   app.use(express.errorHandler());

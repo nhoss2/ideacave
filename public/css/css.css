@@ -188,6 +188,24 @@ a.action-button{
   width: 300px;
 }
 
+#modal-view{
+  display: block;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.4);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+#modal-view #modal-inside{
+  width: 400px;
+  margin: 100px auto 0 auto;
+  padding: 20px;
+  background: #fff;
+}
+
 @font-face{
   font-family: 'Unica One';
   font-style: normal;

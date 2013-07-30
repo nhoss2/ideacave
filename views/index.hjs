@@ -71,7 +71,8 @@
 
   <script type="text/template" id="modal-template">
     <div id="modal-inside">
-      {{ content }}
+      <a href="#" id="close-modal">x</a>
+      {{{ content }}}
     </div>
   </script>
 

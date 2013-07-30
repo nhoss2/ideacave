@@ -206,6 +206,16 @@ a.action-button{
   background: #fff;
 }
 
+#modal-view #modal-inside a#close-modal{
+  font-size: 12px;
+  display: block;
+  float: right;
+  margin: 0;
+  padding: 0;
+  clear: both;
+  text-decoration: none;
+}
+
 @font-face{
   font-family: 'Unica One';
   font-style: normal;

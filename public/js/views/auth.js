@@ -12,9 +12,7 @@ var app = app || {};
     },
 
     showModal: function(){
-      $('body').append(this.render().el);
-      this.$el.css({opacity: 0});
-      this.$el.animate({opacity: 1}, 1000);
+      app.modal.show(this.render().$el.html());
     }
 
   });

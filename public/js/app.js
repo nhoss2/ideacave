@@ -5,7 +5,6 @@ $(function(){
   var ideas = new app.IdeasView();
   var header = new app.HeaderView();
   var auth = new app.AuthView();
-  var modal = new app.ModalView();
 
   // Router
   var Router = Backbone.Router.extend({
@@ -25,7 +24,7 @@ $(function(){
     },
 
     login: function(){
-      modal.showModal('log in form');
+      auth.showModal('log in form');
     },
 
     register: function(){
@@ -33,7 +32,7 @@ $(function(){
     }
   });
 
-  var router = new Router();
+  app.router = new Router();
   Backbone.history.start();
 
 });

@@ -202,18 +202,60 @@ a.action-button{
 #modal-view #modal-inside{
   width: 400px;
   margin: 100px auto 0 auto;
-  padding: 20px;
+  padding: 30px 20px;
   background: #fff;
 }
 
 #modal-view #modal-inside a#close-modal{
   font-size: 12px;
+  color: #a3a3a3;
   display: block;
   float: right;
-  margin: 0;
+  margin: -10px 0 0 0;
   padding: 0;
   clear: both;
   text-decoration: none;
+}
+
+#login-form{
+  font-family: ShareTechMono, monospace;
+}
+
+#login-form input{
+  border: none;
+  padding: 5px;
+  background: #f8f8f8;
+  border: 1px solid #d8d8d8;
+  box-shadow: inset 0px 2px 5px 0px rgba(0, 0, 0, 0.2);
+  width: 300px;
+  display: block;
+  margin: 20px auto;
+  font-size : 16px;
+  font-family: ShareTechMono, monospace;
+  color: #606468;
+}
+
+#login-form h1{
+  font-size: 30px;
+  margin: 10px;
+  text-align: center;
+  color: #739bd6;
+}
+
+#login-form a#log-in-button{
+  display: block;
+  text-decoration: none;
+  color: white;
+  background: #43be43;
+  width: 200px;
+  padding: 10px;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 0 auto;
+}
+
+#login-form a#log-in-button:active{
+  background: #91c07b;
 }
 
 @font-face{

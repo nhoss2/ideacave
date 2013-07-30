@@ -65,8 +65,12 @@
   </script>
 
   <script type="text/template" id="login-template">
-    <input type="text" id="email-address"/>
-    <input type="password" id="password"/>
+    <div id="login-form">
+      <h1>Login</h1>
+      <input type="text" id="email-address" placeholder="email address"/>
+      <input type="password" id="password" placeholder="password"/>
+      <a href="#" id="log-in-button">Submit</a>
+    </div>
   </script>
 
   <script type="text/template" id="modal-template">

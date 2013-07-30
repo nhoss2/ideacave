@@ -4,7 +4,6 @@ var app = app || {};
   app.AuthView = Backbone.View.extend({
 
     template: Mustache.compile($('#login-template').html()),
-    id: 'login-form',
 
     render: function(){
       this.$el.html(this.template);

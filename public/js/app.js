@@ -24,11 +24,11 @@ $(function(){
     },
 
     login: function(){
-      auth.showModal();
+      auth.showLogin();
     },
 
     register: function(){
-      console.log('registering');
+      auth.showRegister();
     }
   });
 

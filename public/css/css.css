@@ -223,11 +223,11 @@ a.action-button{
   text-decoration: none;
 }
 
-#login-form{
+#login-form, #register-form{
   font-family: ShareTechMono, monospace;
 }
 
-#login-form input{
+#login-form input, #register-form input{
   border: none;
   padding: 5px;
   background: #f8f8f8;
@@ -241,14 +241,14 @@ a.action-button{
   color: #606468;
 }
 
-#login-form h1{
+#login-form h1, #register-form h1{
   font-size: 30px;
   margin: 10px;
   text-align: center;
   color: #739bd6;
 }
 
-#login-form a#log-in-button{
+#login-form a#log-in-button, #register-form a#register-button{
   display: block;
   text-decoration: none;
   color: white;
@@ -260,11 +260,11 @@ a.action-button{
   margin: 0 auto;
 }
 
-#login-form a#log-in-button:active{
+#login-form a#log-in-button:active, #register-form a#register-button:active{
   background: #91c07b;
 }
 
-#login-form p#auth-error{
+p#auth-error{
   color: #a2bc36;
   text-align: center;
   margin: 10px;

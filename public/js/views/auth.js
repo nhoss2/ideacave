@@ -4,22 +4,38 @@ var app = app || {};
   app.auth = {}; // object to store details about user
   app.AuthView = Backbone.View.extend({
 
-    template: Mustache.compile($('#login-template').html()),
+    // can be either 'login' or 'register'
+    mode: '',
+
+    loginTemplate: Mustache.compile($('#login-template').html()),
+    registerTemplate: Mustache.compile($('#register-template').html()),
 
     events: function(){
       return {
         'click a#log-in-button': 'login',
+        'click a#register-button': 'register',
         'keyup input': 'logKey'
       }
     },
 
-    render: function(error){
-      this.$el.html(this.template({errorMessage: error}));
+    loginRender: function(error){
+      this.mode = 'login';
+      this.$el.html(this.loginTemplate({errorMessage: error}));
       return this;
     },
 
-    showModal: function(){
-      app.modal.show(this.render().$el);
+    registerRender: function(error){
+      this.mode = 'register';
+      this.$el.html(this.registerTemplate({errorMessage: error}));
+      return this;
+    },
+
+    showLogin: function(){
+      app.modal.show(this.loginRender().$el);
+    },
+
+    showRegister: function(){
+      app.modal.show(this.registerRender().$el);
     },
 
     login: function(){
@@ -33,14 +49,11 @@ var app = app || {};
         global: false,
         context: this,
         success: function(response){
-          app.auth.name = response.name
-          $('#header #not-authenticated').hide();
-          $('#header #authenticated').prepend(app.auth.name).show();
-          app.modal.close();
+          this.displayName(response.name);
         },
         error: function(xhr, type){
           if (type == 'error' && xhr.status == 401){
-            this.render('error: incorrect usename or password');
+            this.loginRender('error: incorrect usename or password');
           }
         }
       });
@@ -48,9 +61,38 @@ var app = app || {};
 
     logKey: function(e){
       if (e.keyCode == 13){
-        this.login();
+        if (this.mode == 'login') this.login();
+        if (this.mode == 'register') this.register();
       }
-    }
+    },
 
+    register: function(){
+      $.ajax({
+        type: 'POST',
+        url: '/register',
+        data: {
+          name: $('#register-form #users-name').val(),
+          username: $('#register-form #email-address').val(),
+          password: $('#register-form #password').val()
+        },
+        global: false,
+        context: this,
+        success: function(response){
+          this.displayName(response.name);
+        },
+        error: function(xhr, type){
+          if (type == 'error' && xhr.status == 400){
+            this.registerRender('error: ' + xhr.response);
+          }
+        }
+      });
+    },
+
+    displayName: function(name){
+      app.auth.name = name
+      $('#header #not-authenticated').hide();
+      $('#header #authenticated').prepend(name).show();
+      app.modal.close();
+    },
   });
 })();

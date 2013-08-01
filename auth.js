@@ -3,6 +3,7 @@ var LocalStrategy = require('passport-local').Strategy;
 var NeDB = require('nedb');
 var scrypt = require('scrypt');
 var check = require('validator').check;
+var sanitize = require('validator').sanitize;
 
 // set up local strategy 
 passport.use(new LocalStrategy(function(email, pass, done){
@@ -86,7 +87,7 @@ module.exports = {
           database.insert({
             email: email,
             password: hash,
-            name: name
+            name: sanitize(name).xss()
           }, function(err, newDoc){
             if (err) {
               throw err;

@@ -11,14 +11,14 @@ module.exports = {
   newUser: function(req, res){
     auth.newUser(req.param('username'), req.param('name'), req.param('password'), function(err, user){
       if (err){ 
-        return res.json({message: 'error'});
+        return res.send(400, err);
       } else {
         // log in user if registration is successful
         req.login(user, function(err){
           if (err) {
             throw err;
           }
-          return res.json({message: 'success'});
+          return res.json({name: user.name});
         });
       }
     });

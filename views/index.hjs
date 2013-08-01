@@ -18,8 +18,14 @@
         <a href="#" id="submit-idea" class="action-button">Submit</a>
       </div>
       <div id="authentication-bar">
-        <a href="#/login">Login</a>
-        <a href="#/register">Register</a>
+        <div id="not-authenticated">
+          <a href="#/login">Login</a>
+          <a href="#/register">Register</a>
+        </div>
+
+        <div id="authenticated">
+          <a href="/logout">Log out</a>
+        </div>
       </div>
     </div>
     <div id="idea-list">
@@ -67,6 +73,7 @@
   <script type="text/template" id="login-template">
     <div id="login-form">
       <h1>Login</h1>
+      <p id="auth-error">{{ errorMessage }}</p>
       <input type="text" id="email-address" placeholder="email address"/>
       <input type="password" id="password" placeholder="password"/>
       <a href="#" id="log-in-button">Submit</a>
@@ -76,7 +83,6 @@
   <script type="text/template" id="modal-template">
     <div id="modal-inside">
       <a href="#" id="close-modal">x</a>
-      {{{ content }}}
     </div>
   </script>
 

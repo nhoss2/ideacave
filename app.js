@@ -40,7 +40,7 @@ if ('development' == app.get('env')) {
 app.get('/', routes.index);
 app.post('/register', user.newUser);
 app.post('/registerAdmin', user.newAdmin);
-app.post('/login', user.login);
+app.post('/login', passport.authenticate('local'), user.login);
 app.get('/logout', user.logout);
 
 http.createServer(app).listen(app.get('port'), function(){

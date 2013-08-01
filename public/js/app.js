@@ -24,7 +24,7 @@ $(function(){
     },
 
     login: function(){
-      auth.showModal('log in form');
+      auth.showModal();
     },
 
     register: function(){

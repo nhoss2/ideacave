@@ -84,6 +84,8 @@ a.action-button{
   top: 20px;
   overflow: hidden;
   font-family: ShareTechMono, monospace;
+  text-transform: uppercase;
+  color: #636363;
 }
 
 #header #authentication-bar a{
@@ -94,7 +96,11 @@ a.action-button{
   border-width: 1px 0 1px 1px;
   font-size: 16px;
   text-decoration: none;
-  text-transform: uppercase;
+}
+
+#header #authentication-bar #authenticated{
+  display: none;
+  font-size: 16px;
 }
 
 #idea-list{
@@ -231,7 +237,7 @@ a.action-button{
   display: block;
   margin: 20px auto;
   font-size : 16px;
-  font-family: ShareTechMono, monospace;
+  font-family: sans-serif;
   color: #606468;
 }
 
@@ -256,6 +262,12 @@ a.action-button{
 
 #login-form a#log-in-button:active{
   background: #91c07b;
+}
+
+#login-form p#auth-error{
+  color: #a2bc36;
+  text-align: center;
+  margin: 10px;
 }
 
 @font-face{

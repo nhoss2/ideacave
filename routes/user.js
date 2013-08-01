@@ -57,11 +57,9 @@ module.exports = {
    * POST login page
    */
 
-  login: passport.authenticate('local', {
-    successRedirect: '/',
-    failureRedirect: '/login',
-    failureFlash: true
-  }),
+  login: function(req, res){
+    res.json({name: req.user.name});
+  },
 
   /*
    * GET logout page

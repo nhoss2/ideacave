@@ -70,7 +70,7 @@ module.exports = {
 
     // check for name
     try{
-      check(name, 'Please enter name').len(1);
+      check(name, 'Please enter name').len(1, 500);
     } catch (err) {
       return callback(err.message);
     }

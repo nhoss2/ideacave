@@ -6,14 +6,9 @@ var app = app || {};
       return {
         title: "empty Idea",
         description: "empty",
-        date: this.getDateString(),
+        date: "",
         author: ""
       }
     },
-
-    getDateString: function(){
-      var now = new Date();
-      return now.toDateString().substr(4);
-    }
   });
 })();

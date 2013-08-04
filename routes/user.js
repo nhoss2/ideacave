@@ -12,15 +12,15 @@ module.exports = {
     auth.newUser(req.param('username'), req.param('name'), req.param('password'), function(err, user){
       if (err){ 
         return res.send(400, err);
-      } else {
-        // log in user if registration is successful
-        req.login(user, function(err){
-          if (err) {
-            throw err;
-          }
-          return res.json({name: user.name});
-        });
-      }
+      } 
+
+      // log in user if registration is successful
+      req.login(user, function(err){
+        if (err) {
+          throw err;
+        }
+        return res.json({name: user.name});
+      });
     });
   },
 
@@ -35,21 +35,21 @@ module.exports = {
       if (err){
         req.flash('error', err);
         return res.redirect('/');
-      } else {
-        req.login(user, function(err){
-          if (err) {
-            throw err;
-          } else {
-            // make the new user an admin
-            auth.addAttributes(user._id, {admin: true});
-
-            // change the config to say that the installation is done
-            jsonConfig.config.installed = true;
-            jsonConfig.save()
-            return res.redirect('/');
-          }
-        });
       }
+
+      req.login(user, function(err){
+        if (err) {
+          throw err;
+        } else {
+          // make the new user an admin
+          auth.addAttributes(user._id, {admin: true});
+
+          // change the config to say that the installation is done
+          jsonConfig.config.installed = true;
+          jsonConfig.save()
+          return res.redirect('/');
+        }
+      });
     });
   },
 

@@ -42,19 +42,6 @@
         </div>
       </div><!-- comments -->
 
-      <div class="single-idea">
-        <div class="idea-details">
-          <h2><a href="#">Something </a></h2>
-          <p>yes here is a something</p>
-        </div>
-
-        <div class="idea-actions-bar">
-          <span class="bar-item">12 comments</span>
-          <span class="bar-item"><a href="#">Edit</a></span>
-          <span class="bar-item date-author">Submitted on 12 Jun 2013 by Nafis</span>
-        </div>
-      </div><!-- single-idea -->
-
     </div><!-- idea-list -->
 
   <script type="text/template" id="single-idea-template">
@@ -66,7 +53,7 @@
       <div class="idea-actions-bar">
         <span class="bar-item">12 comments</span>
         <span class="bar-item"><a href="#">Edit</a></span>
-        <span class="bar-item date-author">Submitted on {{ date }} by Nafis</span>
+        <span class="bar-item date-author">Submitted on {{ date }} by {{ author }}</span>
       </div>
   </script>
 

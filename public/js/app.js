@@ -16,7 +16,7 @@ $(function(){
     },
 
     newPost: function(){
-      $('#new-idea').css({display: 'block'});
+      header.openSubmission();
     },
 
     listComments: function(id){

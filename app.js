@@ -3,6 +3,7 @@ var http = require('http');
 var path = require('path');
 var routes = require('./routes');
 var user = require('./routes/user');
+var posts = require('./routes/posts');
 var passport = require('passport');
 var flash = require('connect-flash');
 
@@ -16,7 +17,6 @@ var app = express();
 app.set('port', process.env.PORT || 3000);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'hjs');
-app.use(express.favicon());
 app.use(express.logger('dev'));
 app.use(express.bodyParser());
 app.use(express.methodOverride());
@@ -28,6 +28,11 @@ app.use(flash());
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
 
+// redirect all 404s to '/'
+app.use(function(req, res, next){
+  res.render('index');
+});
+
 // make HJS tempates not use {{ }} as their delimeters and
 // instead use <% %>
 app.locals.delimiters = '<% %>';
@@ -38,10 +43,16 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', routes.index);
+
 app.post('/register', user.newUser);
 app.post('/registerAdmin', user.newAdmin);
 app.post('/login', passport.authenticate('local'), user.login);
 app.get('/logout', user.logout);
+
+app.post('/ideas', posts.create);
+app.get('/ideas/:id', posts.read);
+app.put('/ideas/:id', posts.update);
+app.del('/ideas/:id', posts.deletePost);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

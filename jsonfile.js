@@ -6,8 +6,9 @@ var defaultConfig = {
   installed: false
 }
 
-// if the config.json file exists, read it. Otherwise make the config.json file
-// with defaultConfig as the file's contents
+// if the config.json file exists, read it. Otherwise make the
+// config.json file with defaultConfig as the file's contents
+
 var read = function(){
   if (!fs.existsSync(configPath)){
     module.exports.save(defaultConfig);
@@ -25,6 +26,9 @@ module.exports = {
     module.exports.config = this.config;
   },
 
+  // make the config variable accessable by reading the
+  // config file and setting module.exports.config which
+  // will be a variable containing the contents of the config
   init: function(){
     module.exports.config = read();
     if (!this.config.installed){

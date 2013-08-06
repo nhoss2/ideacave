@@ -13,8 +13,6 @@ var removeLastAttr = function(idea){
   });
 };
 
-
-
 module.exports = {
 
   // saves new idea to database and calls the callback with the
@@ -43,5 +41,14 @@ module.exports = {
     });
 
   },
+
+  getAll: function(callback){
+    database.find({}, function(err, ideas){
+      if (err) throw err;
+
+      console.log(ideas);
+      callback(ideas);
+    });
+  }
 
 };

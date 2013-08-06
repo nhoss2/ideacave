@@ -49,10 +49,11 @@ app.post('/registerAdmin', user.newAdmin);
 app.post('/login', passport.authenticate('local'), user.login);
 app.get('/logout', user.logout);
 
-app.post('/ideas', posts.create);
-app.get('/ideas/:id', posts.read);
-app.put('/ideas/:id', posts.update);
-app.del('/ideas/:id', posts.deletePost);
+app.post('/api/ideas', posts.create);
+app.get('/api/ideas', posts.read);
+app.get('/api/ideas/:id', posts.read);
+app.put('/api/ideas/:id', posts.update);
+app.del('/api/ideas/:id', posts.deletePost);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

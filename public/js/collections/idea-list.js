@@ -4,7 +4,12 @@ var app = app || {};
   var IdeaList = Backbone.Collection.extend({
     model: app.Post,
 
-    url: '/ideas',
+    url: '/api/ideas',
+
+    initialize: function(){
+      this.fetch();
+    }
+
   });
 
   app.ideas = new IdeaList();

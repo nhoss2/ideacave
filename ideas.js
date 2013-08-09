@@ -46,7 +46,6 @@ module.exports = {
     database.find({}, function(err, ideas){
       if (err) throw err;
 
-      console.log(ideas);
       callback(ideas);
     });
   }

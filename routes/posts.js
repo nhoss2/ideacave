@@ -31,7 +31,6 @@ module.exports = {
    * GET idea
    */
   read: function(req, res){
-    console.log(req.params);
     if (req.params.length == 0) {
       ideas.getAll(function(ideas){
         res.json(ideas);

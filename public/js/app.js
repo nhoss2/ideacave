@@ -5,6 +5,7 @@ $(function(){
   var ideas = new app.IdeasView();
   var header = new app.HeaderView();
   var auth = new app.AuthView();
+  var appWindow = new app.appWindow();
 
   // Router
   var Router = Backbone.Router.extend({

@@ -6,10 +6,6 @@ var app = app || {};
 
     url: '/api/ideas',
 
-    initialize: function(){
-      this.fetch();
-    }
-
   });
 
   app.ideas = new IdeaList();

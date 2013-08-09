@@ -48,6 +48,7 @@ app.post('/register', user.newUser);
 app.post('/registerAdmin', user.newAdmin);
 app.post('/login', passport.authenticate('local'), user.login);
 app.get('/logout', user.logout);
+app.get('/api/currentuser', user.getName);
 
 app.post('/api/ideas', posts.create);
 app.get('/api/ideas', posts.read);

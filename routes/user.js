@@ -70,5 +70,16 @@ module.exports = {
     res.redirect('/');
   },
 
+  /*
+   * GET list users name
+   */
+  getName: function(req, res){
+    if (req.user){
+      res.json({name: req.user.name});
+    } else {
+      res.json({});
+    }
+  }
+
 
 };

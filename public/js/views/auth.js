@@ -18,6 +18,10 @@ var app = app || {};
       }
     },
 
+    initialize: function(){
+      this.checkLoggedIn();
+    },
+
     loginRender: function(error){
       this.mode = 'login';
       this.$el.html(this.loginTemplate({errorMessage: error}));
@@ -94,5 +98,16 @@ var app = app || {};
       $('#header #authenticated').prepend(name).show();
       app.modal.close();
     },
+
+    // In the case that the user refreshes or comes back to the
+    // app later, this is a hacky way to check if the user is
+    // logged in or not.
+    checkLoggedIn: function(){
+      var self = this;
+      $.getJSON('/api/currentuser', function(user){
+        if (!user.name) return;
+        else self.displayName(user.name);
+      });
+    }
   });
 })();

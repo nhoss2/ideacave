@@ -31,9 +31,13 @@ module.exports = {
    * GET idea
    */
   read: function(req, res){
-    if (req.params.length == 0) {
+    if (!req.params.id) {
       ideas.getAll(function(ideas){
         res.json(ideas);
+      });
+    } else {
+      ideas.getSingleIdea(req.params.id, function(idea){
+        res.json(idea);
       });
     }
   },

@@ -48,6 +48,14 @@ module.exports = {
 
       callback(ideas);
     });
-  }
+  },
+
+  getSingleIdea: function(ideaId, callback){
+    database.findOne({id: parseInt(ideaId)}, function(err, idea){
+      if (err) throw err;
+      if (idea) return callback(idea);
+      return callback({});
+    });
+  },
 
 };

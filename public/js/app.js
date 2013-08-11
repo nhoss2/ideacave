@@ -5,7 +5,6 @@ $(function(){
   var ideas = new app.IdeasView();
   var header = new app.HeaderView();
   var auth = new app.AuthView();
-  var appWindow = new app.appWindow();
 
   // Router
   var Router = Backbone.Router.extend({
@@ -13,7 +12,7 @@ $(function(){
       'new': 'newPost',
       'idea/:id': 'listComments',
       'login': 'login',
-      'register': 'register'
+      'register': 'register',
     },
 
     newPost: function(){
@@ -30,11 +29,14 @@ $(function(){
 
     register: function(){
       auth.showRegister();
-    }
+    },
+
   });
 
   app.router = new Router();
-  Backbone.history.start();
+  Backbone.history.start({
+    root: '/'
+  });
 
 });
 

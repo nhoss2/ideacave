@@ -5,7 +5,6 @@ var jsonfile = require('../jsonfile');
  */
 
 exports.index = function(req, res){
-  console.log(req.user);
   if (!jsonfile.config.installed){
     res.render('installation', {error: req.flash('error')});
   } else {

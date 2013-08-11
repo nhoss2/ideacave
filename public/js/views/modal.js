@@ -44,7 +44,6 @@ var app = app || {};
       }
     },
 
-
   });
 
   app.modal = new ModalView();

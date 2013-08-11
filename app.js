@@ -50,7 +50,7 @@ app.post('/login', passport.authenticate('local'), user.login);
 app.get('/logout', user.logout);
 app.get('/api/currentuser', user.getName);
 
-app.post('/api/ideas', posts.create);
+app.post('/api/ideas', auth.ensureAuthenticated, posts.create);
 app.get('/api/ideas', posts.read);
 app.get('/api/ideas/:id', posts.read);
 app.put('/api/ideas/:id', posts.update);

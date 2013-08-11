@@ -93,6 +93,9 @@ var app = app || {};
     },
 
     displayName: function(name){
+
+      // the app.auth.name variable is used to check if 
+      // a user is logged in or not
       app.auth.name = name
       $('#header #not-authenticated').hide();
       $('#header #authenticated').prepend(name).show();

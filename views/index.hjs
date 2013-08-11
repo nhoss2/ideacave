@@ -59,6 +59,27 @@
       </div>
   </script>
 
+  <script type="text/template" id="idea-details-template">
+      {{#loaded}}
+        <div class="idea-details">
+          <h2>{{ title }}</h2>
+          <p>{{ description }}</p>
+        </div>
+
+        <div class="idea-actions-bar">
+          <span class="bar-item">12 comments</span>
+          <span class="bar-item"><a href="#">Edit</a></span>
+          <span class="bar-item date-author">Submitted on {{ date }} by {{ author }}</span>
+        </div>
+      {{/loaded}}
+
+      {{^loaded}}
+        <div id="loading-message">
+          LOADING
+        </div>
+      {{/loaded}}
+  </script>
+
   <script type="text/template" id="login-template">
     <div id="login-form">
       <h1>Login</h1>

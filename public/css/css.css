@@ -103,41 +103,42 @@ a.action-button{
   font-size: 16px;
 }
 
-#idea-list{
+#main-app-window{
   width: 700px;
   background: #dbe3e5;
   margin: 0 auto;
   overflow: hidden;
 }
 
-#idea-list .single-idea{
+#main-app-window .idea-details h2{
+  font-family: ShareTechMono, monospace;
+  margin: 0;
+  font-weight: normal;
+  font-size: 20px;
+  color: #11a11b;
+}
+
+#main-app-window .single-idea{
   width: 700px;
   float: left;
   background: #fff;
 }
 
-#idea-list .single-idea .idea-details{
+#main-app-window .single-idea .idea-details{
   padding: 40px 40px 0 40px;
 }
 
-#idea-list .single-idea .idea-details h2{
-  font-family: ShareTechMono, monospace;
-  margin: 0;
-  font-weight: normal;
-  font-size: 20px;
-}
-
-#idea-list .single-idea .idea-details h2 a{
+#main-app-window #idea-list .single-idea .idea-details h2 a{
   color: #11a11b;
   text-decoration: underline;
 }
 
-#idea-list .single-idea p{
+#main-app-window .single-idea p{
   font-family: Esteban, serif;
   margin: 5px 0;
 }
 
-#idea-list .single-idea .idea-actions-bar{
+#main-app-window .single-idea .idea-actions-bar{
   display: block;
   background: #dbe3e5;
   color: #809499;
@@ -146,7 +147,7 @@ a.action-button{
   overflow: hidden;
 }
 
-#idea-list .single-idea .idea-actions-bar span.bar-item{
+#main-app-window .single-idea .idea-actions-bar span.bar-item{
   font-family: MavenPro, sans-serif;
   text-transform: uppercase;
   border-right: 1px solid #c1cdd0;
@@ -155,22 +156,22 @@ a.action-button{
   font-size: 12px
 }
 
-#idea-list .single-idea .idea-actions-bar span.bar-item:first-child{
+#main-app-window .single-idea .idea-actions-bar span.bar-item:first-child{
   border-left: 1px solid #c1cdd0;
 }
   
 
-#idea-list .single-idea .idea-actions-bar span.bar-item a{
+#main-app-window .single-idea .idea-actions-bar span.bar-item a{
   color: #809499;
   text-decoration: none;
 }
 
-#idea-list .single-idea .idea-actions-bar span.date-author{
+#main-app-window .single-idea .idea-actions-bar span.date-author{
   float: right;
   border-left: 1px solid #c1cdd0;
 }
 
-#idea-list #comments{
+#main-app-window #comments{
   background: #dbe3e5;
   display: none;
   float: right;
@@ -179,7 +180,7 @@ a.action-button{
   overflow: hidden;
 }
 
-#idea-list #comments h3{
+#main-app-window #comments h3{
   font-family: MavenPro, sans-serif;
   color: #809499;
   font-size: 1em;
@@ -190,8 +191,16 @@ a.action-button{
   border-bottom: 1px solid #c1cdd0;
 }
 
-#idea-list #comments .single-comment{
+#main-app-window #comments .single-comment{
   width: 300px;
+}
+
+#main-app-window #loading-message{
+  text-align: center;
+  font-family: MavenPro, sans-serif;
+  padding: 30px;
+  background: #f2f6ba;
+  color: #44bd44;
 }
 
 #modal-view{

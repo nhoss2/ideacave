@@ -10,10 +10,15 @@ $(function(){
   // Router
   var Router = Backbone.Router.extend({
     routes: {
+      '' : 'index',
       'new': 'newPost',
       'idea/:id': 'listComments',
       'login': 'login',
       'register': 'register',
+    },
+
+    index: function(){
+      ideas.render();
     },
 
     newPost: function(){

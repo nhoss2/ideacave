@@ -11,5 +11,14 @@ var app = app || {};
       return this;
     },
 
+    loadModel: function(ideaId){
+      var idea = new app.Post({id: ideaId});
+      this.model = idea;
+      var self = this;
+      idea.fetch({success: function(){
+        self.render();
+      }});
+    },
+
   });
 })();

@@ -3,6 +3,7 @@ var app = app || {};
 $(function(){
 
   var ideas = new app.IdeasView();
+  var idea = new app.IdeaDetailsView();
   var header = new app.HeaderView();
   var auth = new app.AuthView();
 
@@ -20,7 +21,7 @@ $(function(){
     },
 
     listComments: function(id){
-      console.log(id + ' is id of idea to get comments of.');
+      idea.loadModel(id);
     },
 
     login: function(){
@@ -34,9 +35,7 @@ $(function(){
   });
 
   app.router = new Router();
-  Backbone.history.start({
-    root: '/'
-  });
+  Backbone.history.start();
 
 });
 

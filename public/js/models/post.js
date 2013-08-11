@@ -4,11 +4,14 @@ var app = app || {};
   app.Post = Backbone.Model.extend({
     defaults: function(){
       return {
-        title: "empty Idea",
-        description: "empty",
+        title: "",
+        description: "",
         date: "",
         author: ""
       }
     },
+
+    urlRoot: '/api/ideas/'
+
   });
 })();

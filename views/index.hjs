@@ -48,7 +48,7 @@
 
   <script type="text/template" id="single-idea-template">
       <div class="idea-details">
-        <h2><a href="#/ideas/{{ id }}">{{ title }}</a></h2>
+        <h2><a href="#/idea/{{ id }}">{{ title }}</a></h2>
         <p>{{ description }}</p>
       </div>
 

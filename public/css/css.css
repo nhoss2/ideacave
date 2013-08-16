@@ -108,6 +108,7 @@ a.action-button{
   background: #dbe3e5;
   margin: 0 auto;
   overflow: hidden;
+  margin-bottom: 50px;
 }
 
 #main-app-window .idea-details h2{
@@ -173,9 +174,8 @@ a.action-button{
 
 #main-app-window #comments{
   background: #dbe3e5;
-  display: none;
   float: right;
-  width: 0;
+  width: 100%;
   font-family: esteban, serif;
   overflow: hidden;
 }
@@ -189,10 +189,24 @@ a.action-button{
   text-transform: uppercase;
   text-align: center;
   border-bottom: 1px solid #c1cdd0;
+  border-top: 1px solid #c1cdd0;
 }
 
 #main-app-window #comments .single-comment{
-  width: 300px;
+  padding: 10px 40px;
+}
+
+#main-app-window #comments #new-comment{
+  padding: 10px 40px;
+}
+
+#main-app-window #comments #new-comment textarea{
+  padding: 10px;
+  height: 80px;
+  width: 600px;
+  color: #494949;
+  background: #ebecec;
+  border: 1px solid #bacccc;
 }
 
 #main-app-window #loading-message{

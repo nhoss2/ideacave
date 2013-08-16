@@ -30,18 +30,6 @@
     </div><!-- header -->
     <div id="main-app-window">
       <div id="idea-list">
-        <div id="comments">
-          <h3>Comments</h3>
-          <div class="single-comment">
-            <p>Blah Blah ho ho</p>
-          </div>
-          <div class="single-comment">
-            <p>Need to write something that will take up at least two lines. Not sure how much longer I have to write for. I think a few more words should do the trick.</p>
-          </div>
-          <div class="single-comment">
-            <p>Blah Blah ho ho</p>
-          </div>
-        </div><!-- comments -->
 
       </div><!-- idea-list -->
     </div><!-- main app window -->
@@ -71,6 +59,31 @@
           <span class="bar-item"><a href="#">Edit</a></span>
           <span class="bar-item date-author">Submitted on {{ date }} by {{ author }}</span>
         </div>
+        <div id="comments">
+          <h3>New Comment</h3>
+          <div id="new-comment">
+            <textarea></textarea>
+          </div>
+          <h3>Comments</h3>
+          <div class="single-comment">
+            <p>Blah Blah ho ho</p>
+            <div class="comment-attributes">
+              <span class="comment-author">Nafis</span>
+            </div>
+          </div>
+          <div class="single-comment">
+            <p>Need to write something that will take up at least two lines. Not sure how much longer I have to write for. I think a few more words should do the trick.</p>
+            <div class="comment-attributes">
+              <span class="comment-author">Nafis</span>
+            </div>
+          </div>
+          <div class="single-comment">
+            <p>Blah Blah ho ho</p>
+            <div class="comment-attributes">
+              <span class="comment-author">Nafis</span>
+            </div>
+          </div>
+        </div><!-- comments -->
       {{/loaded}}
 
       {{^loaded}}

@@ -36,6 +36,7 @@ a.action-button{
   padding: 5px 0;
   display: block;
   color: #fff;
+  text-align: center;
 }
 
 #header a.action-button:hover{
@@ -197,16 +198,36 @@ a.action-button{
 }
 
 #main-app-window #comments #new-comment{
-  padding: 10px 40px;
+  padding: 0 40px 10px 40px;
 }
 
 #main-app-window #comments #new-comment textarea{
-  padding: 10px;
+  padding: 10px 40px;
+  margin: 0 -40px;
   height: 80px;
-  width: 600px;
+  width: 618px;
   color: #494949;
-  background: #ebecec;
+  background: #f0f0f0;
   border: 1px solid #bacccc;
+  border-right: 1px solid #2e3233;
+  border-left: 1px solid #2e3233;
+  font-size: 1em;
+  max-width: 618px;
+}
+
+#main-app-window #comments #new-comment a.action-button{
+  background: #bda195;
+  width: 211px;
+  margin: 10px 0 5px auto;
+  font-size: 12px;
+}
+
+#main-app-window #comments #new-comment a.action-button:hover{
+  background: #d6ae92;
+}
+
+#main-app-window #comments #new-comment a.action-button:active{
+  background: #7ab77e;
 }
 
 #main-app-window #loading-message{

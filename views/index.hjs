@@ -62,7 +62,8 @@
         <div id="comments">
           <h3>New Comment</h3>
           <div id="new-comment">
-            <textarea></textarea>
+            <textarea placeholder="Write comment here"></textarea>
+            <a href="#" class="action-button">submit comment</a>
           </div>
           <h3>Comments</h3>
           <div class="single-comment">
@@ -122,7 +123,9 @@
 
   <script src="/js/vendor/mustache-min.js"></script>
   <script src="/js/models/post.js"></script>
+  <script src="/js/models/comment.js"></script>
   <script src="/js/collections/idea-list.js"></script>
+  <script src="/js/collections/comments.js"></script>
   <script src="/js/views/header.js"></script>
   <script src="/js/views/ideas.js"></script>
   <script src="/js/views/idea-details.js"></script>

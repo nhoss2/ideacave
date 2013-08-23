@@ -7,7 +7,8 @@ var app = app || {};
         title: "",
         description: "",
         date: "",
-        author: ""
+        author: "",
+        comments: new app.Comments()
       }
     },
 

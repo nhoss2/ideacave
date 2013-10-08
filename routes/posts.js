@@ -47,6 +47,33 @@ module.exports = {
    */
   update: function(req, res){
 
+    // for new comments
+    if (req.body.newComment){
+
+      // get last comment
+      var newComment = req.body.comments[req.body.comments.length - 1];
+
+      var commentTime = new Date();
+      newComment.author = req.user.name;
+      newComment.time = commentTime.getTime();
+
+      ideas.addComment(req.body.id, newComment, function(idea){
+        if (idea == null){
+          res.json(500);
+        } else {
+          res.json(idea);
+        }
+      });
+    }
+  },
+
+  /*
+   * PATCH idea
+   */
+
+  updatesomething: function(req, res){
+    console.log(req.body);
+    res.json(200);
   },
 
   /*

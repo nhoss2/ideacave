@@ -8,7 +8,19 @@ var app = app || {};
         description: "",
         date: "",
         author: "",
-        comments: new app.Comments()
+        comments: []
+      }
+    },
+
+    initialize: function(){
+      this.on('change', this.checkComments);
+    },
+
+    checkComments: function(){
+      // kind of a hack that makes the comments attribute a collection if they
+      // are an array.
+      if (_.isArray(this.get('comments'))){
+        this.set('comments', new app.Comments(this.get('comments')));
       }
     },
 

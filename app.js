@@ -53,8 +53,9 @@ app.get('/api/currentuser', user.getName);
 app.post('/api/ideas', auth.ensureAuthenticated, posts.create);
 app.get('/api/ideas', posts.read);
 app.get('/api/ideas/:id', posts.read);
-app.put('/api/ideas/:id', posts.update);
-app.del('/api/ideas/:id', posts.deletePost);
+app.put('/api/ideas/:id', auth.ensureAuthenticated, posts.update);
+app.patch('/api/ideas/:id', auth.ensureAuthenticated, posts.updatesomething);
+app.del('/api/ideas/:id', auth.ensureAuthenticated, posts.deletePost);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

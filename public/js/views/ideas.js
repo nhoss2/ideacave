@@ -36,7 +36,6 @@ var app = app || {};
 
     initialize: function(){
       this.listenTo(this.collection, 'add', this.add);
-      this.listenTo(this.collection, 'remove', this.removeOne);
 
       this.collection.fetch();
       this.render();
@@ -46,10 +45,6 @@ var app = app || {};
       var newPost = new SingleIdeaView({model: model});
       this.$el.append(newPost.render().el);
     },
-
-    removeOne: function(model){
-
-    }
 
   });
 })();

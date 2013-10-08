@@ -6,6 +6,7 @@ var database = new NeDB({
   autoload: true
 });
 
+// remove the 'last' attribute on the model
 var removeLastAttr = function(idea){
   delete idea.last;
   database.update({id: idea.id}, idea, {}, function(err){
@@ -56,6 +57,26 @@ module.exports = {
       if (idea) return callback(idea);
       return callback({});
     });
+  },
+
+  addComment: function(ideaId, comment, callback){
+    database.findOne({id: parseInt(ideaId)}, function(err, idea){
+      if (err) throw err;
+      if (idea){
+        if (idea.comments){
+          idea.comments.push(comment);
+        } else {
+          idea.comments = [comment];
+        }
+        database.update({id: idea.id}, idea, {}, function(err){
+          if (err) throw err;
+
+          return callback(idea);
+        });
+      } else {
+        return callback(null);
+      }
+    })
   },
 
 };

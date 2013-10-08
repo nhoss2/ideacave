@@ -22,6 +22,11 @@ h1{
   box-shadow: 0px 4px 0px 0px rgba(176, 83, 58, 0.74);
 }
 
+#header h1 a{
+  color: #2f2f2f;
+  text-decoration: none;
+}
+
 #header a.action-button{
   background: #b5d0d0;
   width: 211px;
@@ -194,6 +199,8 @@ a.action-button{
 }
 
 #main-app-window #comments .single-comment{
+  background: #23282b;
+  color: #d6d6d6;
   padding: 10px 40px;
 }
 

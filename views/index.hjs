@@ -9,7 +9,7 @@
   </head>
   <body>
     <div id="header">
-      <h1>Idea Cave</h1>
+      <h1><a href="#">Idea Cave</a></h1>
       <a href="#/new" class="action-button">New Idea</a>
       <div id="new-idea">
         <input type="text" placeholder="Title" id="idea-title"></input>
@@ -59,32 +59,6 @@
           <span class="bar-item"><a href="#">Edit</a></span>
           <span class="bar-item date-author">Submitted on {{ date }} by {{ author }}</span>
         </div>
-        <div id="comments">
-          <h3>New Comment</h3>
-          <div id="new-comment">
-            <textarea placeholder="Write comment here"></textarea>
-            <a href="#" class="action-button">submit comment</a>
-          </div>
-          <h3>Comments</h3>
-          <div class="single-comment">
-            <p>Blah Blah ho ho</p>
-            <div class="comment-attributes">
-              <span class="comment-author">Nafis</span>
-            </div>
-          </div>
-          <div class="single-comment">
-            <p>Need to write something that will take up at least two lines. Not sure how much longer I have to write for. I think a few more words should do the trick.</p>
-            <div class="comment-attributes">
-              <span class="comment-author">Nafis</span>
-            </div>
-          </div>
-          <div class="single-comment">
-            <p>Blah Blah ho ho</p>
-            <div class="comment-attributes">
-              <span class="comment-author">Nafis</span>
-            </div>
-          </div>
-        </div><!-- comments -->
       {{/loaded}}
 
       {{^loaded}}
@@ -92,6 +66,24 @@
           LOADING
         </div>
       {{/loaded}}
+  </script>
+
+  <script type="text/template" id="comment-template">
+    <p>{{ comment }}</p>
+    <div class="comment-attributes">
+      <span class="comment-author">{{ author }}</span>
+    </div>
+  </script>
+
+  <script type="text/template" id="comments-template">
+    <h3>New Comment</h3>
+    <div id="new-comment">
+      <textarea placeholder="Write comment here"></textarea>
+      <a href="#" class="action-button">submit comment</a>
+    </div>
+    <h3 id="comment-section-title">Comments</h3>
+    <div id="comments-list">
+    </div>
   </script>
 
   <script type="text/template" id="login-template">
@@ -129,6 +121,7 @@
   <script src="/js/views/header.js"></script>
   <script src="/js/views/ideas.js"></script>
   <script src="/js/views/idea-details.js"></script>
+  <script src="/js/views/comments.js"></script>
   <script src="/js/views/auth.js"></script>
   <script src="/js/views/modal.js"></script>
   <script src="/js/transitions.js"></script>

@@ -3,13 +3,13 @@
   checks and rendering on the CommentsView object and
   moving the #comments div to its own template
 
-- have ability to save comments. 
-
 - make sure only users logged in can write comments. Maybe
   come up with a easy to use method for parts of the app
   that need users to be loged in
 
-- render previous comments
-
 - make sure server side that any put request to update a 
   model is being checked if user is allowed to update model.
+
+done:
+- render previous comments
+- have ability to save comments. 

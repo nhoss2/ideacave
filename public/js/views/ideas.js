@@ -32,6 +32,7 @@ var app = app || {};
 
     render: function(){
       $('#main-app-window').html(this.el);
+      return this;
     },
 
     initialize: function(){

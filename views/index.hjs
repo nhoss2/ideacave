@@ -42,7 +42,6 @@
 
       <div class="idea-actions-bar">
         <span class="bar-item">{{ comments.length }} comments</span>
-        <span class="bar-item"><a href="#">Edit</a></span>
         <span class="bar-item date-author">Submitted on {{ date }} by {{ author }}</span>
       </div>
   </script>
@@ -56,7 +55,7 @@
 
         <div class="idea-actions-bar">
           <span class="bar-item">12 comments</span>
-          <span class="bar-item"><a href="#">Edit</a></span>
+          <span class="bar-item"><a id="edit-post" href="#">Edit</a></span>
           <span class="bar-item date-author">Submitted on {{ date }} by {{ author }}</span>
         </div>
       {{/loaded}}
@@ -66,6 +65,11 @@
           LOADING
         </div>
       {{/loaded}}
+  </script>
+
+  <script type="text/template" id="idea-edit-template">
+    <input type="text" id="edit-title" value="{{ title }}">
+    <textarea>{{ description }}</textarea>
   </script>
 
   <script type="text/template" id="comment-template">

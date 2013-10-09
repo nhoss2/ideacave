@@ -7,6 +7,12 @@ var app = app || {};
 
     className: 'single-idea',
 
+    events: function(){
+      return {
+        'click a#edit-post': 'editPost',
+      }
+    },
+
     render: function(){
       this.checkLoaded();
       this.$el.html(this.template(this.model.toJSON()));
@@ -56,7 +62,6 @@ var app = app || {};
     },
 
     saveComments: function(){
-      console.log('save called');
       // when saving a new comment, set a temporary attribute on
       // model to indicate to server that a there is a new
       // comment to be saved. Otherwise the server will think
@@ -69,8 +74,30 @@ var app = app || {};
       });
     },
 
-    commentsChanged: function(){
-      console.log('comments changed');
+    editPost: function(e){
+      e.preventDefault();
+
+      // replace the idea title and description with text
+      // fields
+      var ideaArea = this.$el.find('.idea-details');
+
+      ideaArea.html('');
+
+      var editView = new EditIdeaView({model: this.model});
+
+      ideaArea.html(editView.render().el);
+
+    }
+
+  });
+
+  var EditIdeaView = Backbone.View.extend({
+
+    template: Mustache.compile($('#idea-edit-template').html()),
+
+    render: function(){
+      this.$el.html(this.template(this.model.toJSON()));
+      return this;
     }
 
   });

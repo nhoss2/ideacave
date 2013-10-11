@@ -70,6 +70,9 @@
   <script type="text/template" id="idea-edit-template">
     <input type="text" id="edit-title" value="{{ title }}">
     <textarea>{{ description }}</textarea>
+
+    <a href="#" class="action-button" id="save-post-edit">Save</a>
+    <a href="#" class="action-button" id="cancel-post-edit">Cancel</a>
   </script>
 
   <script type="text/template" id="comment-template">

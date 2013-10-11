@@ -95,10 +95,28 @@ var app = app || {};
 
     template: Mustache.compile($('#idea-edit-template').html()),
 
+    events: function(){
+      return {
+        'click a#save-post-edit': 'saveEdit',
+        'click a#cancel-post-edit': 'cancelEdit'
+      }
+    },
+
     render: function(){
       this.$el.html(this.template(this.model.toJSON()));
       return this;
+    },
+
+    saveEdit: function(e){
+      e.preventDefault();
+
+    },
+
+    cancelEdit: function(e){
+      e.preventDefault();
     }
+
+
 
   });
 })();

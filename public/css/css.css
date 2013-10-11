@@ -125,6 +125,41 @@ a.action-button{
   color: #11a11b;
 }
 
+#main-app-window .idea-details input[type="text"], #main-app-window .idea-details textarea{
+  border: 1px solid #aaa;
+  display: block;
+  width: 100%;
+  box-shadow: inset 0px 2px 3px 0px rgba(0, 0, 0, 0.2);
+  background: #f6f6f6;
+}
+
+#main-app-window .idea-details input[type="text"]{
+  padding: 5px;
+  font-family: ShareTechMono, monospace;
+  margin: 0;
+  font-weight: normal;
+  font-size: 20px;
+  color: #11a11b;
+  margin-bottom: 10px;
+}
+
+#main-app-window .idea-details textarea{
+  padding: 5px;
+  font-family: Esteban, serif;
+}
+
+#main-app-window .idea-details a#save-post-edit, #main-app-window .idea-details a#cancel-post-edit{
+  display: inline-block;
+  width: 100px;
+  margin: 10px 10px 0 0;
+  background: #859fad;
+}
+
+#main-app-window .idea-details a#save-post-edit:hover, 
+#main-app-window .idea-details a#cancel-post-edit:hover{
+  background: #6eabcc;
+}
+
 #main-app-window .single-idea{
   width: 700px;
   float: left;

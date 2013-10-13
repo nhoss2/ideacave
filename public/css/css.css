@@ -146,6 +146,7 @@ a.action-button{
 #main-app-window .idea-details textarea{
   padding: 5px;
   font-family: Esteban, serif;
+  height: 380px;
 }
 
 #main-app-window .idea-details a#save-post-edit, #main-app-window .idea-details a#cancel-post-edit{

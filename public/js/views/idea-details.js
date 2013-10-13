@@ -80,12 +80,15 @@ var app = app || {};
       // replace the idea title and description with text
       // fields
       var ideaArea = this.$el.find('.idea-details');
-
       ideaArea.html('');
-
       var editView = new EditIdeaView({model: this.model});
-
       ideaArea.html(editView.render().el);
+
+      // if editing has been cancelled, render the old post
+      var self = this;
+      editView.on('remove', function(){
+        self.render();
+      });
 
     }
 
@@ -109,14 +112,13 @@ var app = app || {};
 
     saveEdit: function(e){
       e.preventDefault();
-
     },
 
     cancelEdit: function(e){
       e.preventDefault();
+      this.trigger('remove');
+      this.remove();
     }
-
-
 
   });
 })();

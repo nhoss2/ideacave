@@ -87,7 +87,7 @@ module.exports = {
           database.insert({
             email: email,
             password: hash,
-            name: sanitize(name).xss()
+            name: String(sanitize(name).xss())
           }, function(err, newDoc){
             if (err) {
               throw err;

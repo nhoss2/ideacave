@@ -79,4 +79,31 @@ module.exports = {
     })
   },
 
+  /*
+   * callback takes two arguments:
+   *   - idea
+   *   - error: string describing error
+   */
+  editPost: function(postEdit, callback){
+    database.findOne({id: postEdit.id}, function(err, idea){
+      if (err) throw err;
+
+      // idea does not exist
+      if (!idea) return callback(null, 'error');
+
+      // if user is not allowed to edit idea, return error
+      if (idea.author != postEdit.author) return callback(null, 'error');
+
+      idea.title = postEdit.title;
+      idea.description = postEdit.description;
+
+      database.update({id: idea.id}, idea, {}, function(err){
+        if (err) throw err;
+
+        return callback(idea);
+      });
+
+    });
+  }
+
 };

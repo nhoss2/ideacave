@@ -112,6 +112,17 @@ var app = app || {};
 
     saveEdit: function(e){
       e.preventDefault();
+
+      // change only the title and description of the model
+      this.model.set('title', this.$el.find('input#edit-title').val());
+      this.model.set('description', this.$el.find('textarea').val());
+
+      // call the save method and then remove this view. The
+      // post will be automatically rendered with the new
+      // attributes as the IdeaDetailsView is listening to the
+      // models change event.
+      this.model.save();
+      this.remove();
     },
 
     cancelEdit: function(e){

@@ -64,7 +64,26 @@ module.exports = {
           res.json(idea);
         }
       });
+    } else {
+      // for post edits
+      console.log(req.body);
+
+      postEdit = {
+        id: req.body.id,
+        title: req.body.title,
+        description: req.body.description,
+        author: req.user.name
+      };
+
+      ideas.editPost(postEdit, function(idea, err){
+        if (err) {
+          res.json({error: err});
+        } else {
+          res.json(idea);
+        }
+      });
     }
+
   },
 
   /*

@@ -18,10 +18,6 @@ var app = app || {};
       return this;
     },
 
-    showComments: function(){
-      console.log('showing comments!');
-    }
-
   });
 
   app.IdeasView = Backbone.View.extend({

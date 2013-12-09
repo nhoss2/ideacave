@@ -1,6 +1,7 @@
 {
   "name": "ideacave",
   "version": "0.0.1",
+  "author": "Nafis Hossain",
   "scripts": {
     "start": "node app.js"
   },

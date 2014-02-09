@@ -77,7 +77,7 @@ module.exports = {
 
       ideas.editPost(postEdit, function(idea, err){
         if (err) {
-          res.json({error: err});
+          res.json(500, {error: err});
         } else {
           res.json(idea);
         }

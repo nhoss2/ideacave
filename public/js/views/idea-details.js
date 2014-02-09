@@ -20,6 +20,7 @@ var app = app || {};
         this.$el.append(this.commentsView.el);
       }
       $('#main-app-window').html(this.el);
+      console.log('rendering');
       return this;
     },
 
@@ -34,7 +35,12 @@ var app = app || {};
 
       this.render();
 
-      this.listenTo(this.model, 'change', this.render);
+      this.listenTo(this.model, 'change', this.modelChange);
+    },
+
+    modelChange: function(){
+      console.log(JSON.stringify(this.model.toJSON()));
+      this.render();
     },
 
     checkLoaded: function(){
@@ -80,7 +86,6 @@ var app = app || {};
       // replace the idea title and description with text
       // fields
       var ideaArea = this.$el.find('.idea-details');
-      ideaArea.html('');
       var editView = new EditIdeaView({model: this.model});
       ideaArea.html(editView.render().el);
 

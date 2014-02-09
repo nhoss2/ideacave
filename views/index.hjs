@@ -54,7 +54,7 @@
         </div>
 
         <div class="idea-actions-bar">
-          <span class="bar-item">12 comments</span>
+          <span class="bar-item">{{ comments.length }} comments</span>
           <span class="bar-item"><a id="edit-post" href="#">Edit</a></span>
           <span class="bar-item date-author">Submitted on {{ date }} by {{ author }}</span>
         </div>

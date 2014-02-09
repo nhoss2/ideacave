@@ -2,6 +2,7 @@ var app = app || {};
 
 $(function(){
 
+  // initialise views
   var ideas = new app.IdeasView();
   var idea = new app.IdeaDetailsView();
   var header = new app.HeaderView();
@@ -12,7 +13,7 @@ $(function(){
     routes: {
       '' : 'index',
       'new': 'newPost',
-      'idea/:id': 'listComments',
+      'idea/:id': 'loadIdea',
       'login': 'login',
       'register': 'register',
     },
@@ -25,7 +26,7 @@ $(function(){
       header.openSubmission();
     },
 
-    listComments: function(id){
+    loadIdea: function(id){
       idea.loadModel(id);
     },
 

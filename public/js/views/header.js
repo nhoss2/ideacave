@@ -10,7 +10,7 @@ var app = app || {};
     },
 
     openSubmission: function(){
-      if (this.checkLoggedIn()) this.$el.show();
+      if (app.auth.loggedIn()) this.$el.show();
     },
 
     closeSubmission: function(){
@@ -26,15 +26,6 @@ var app = app || {};
       });
       this.closeSubmission();
       console.log(app.ideas.at(0));
-    },
-
-    // returns true of logged in, false otherwise
-    checkLoggedIn: function(){
-      if (app.auth.name) return true;
-
-      this.closeSubmission();
-      app.router.navigate('/login', {trigger: true});
-      return false;
     }
 
   });

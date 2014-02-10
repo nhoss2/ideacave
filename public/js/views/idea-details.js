@@ -83,6 +83,9 @@ var app = app || {};
     editPost: function(e){
       e.preventDefault();
 
+      if (!app.auth.loggedIn()) return;
+
+
       // replace the idea title and description with text
       // fields
       var ideaArea = this.$el.find('.idea-details');

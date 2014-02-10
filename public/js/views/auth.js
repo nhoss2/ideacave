@@ -1,7 +1,21 @@
 var app = app || {};
 
 (function(){
-  app.auth = {}; // object to store details about user
+
+  // object to store details about user
+  app.auth = {
+
+    // function available to the app to check if the user is
+    // logged in
+    loggedIn: function(){
+      if (this.name) return true;
+
+      app.router.navigate('/login', {trigger: true});
+      return false;
+    }
+    
+  };
+
   app.AuthView = Backbone.View.extend({
 
     // can be either 'login' or 'register'

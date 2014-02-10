@@ -51,6 +51,14 @@ var app = app || {};
       if (this.model.get('title') != '' && !this.model.get('loaded')){
         this.model.set({loaded: true});
 
+        // check if the post was created by the logged in
+        // user and if so, show the edit button
+        if (app.auth.name === this.model.get('author')){
+          console.log('can edit');
+          this.model.set({canedit: true});
+        }
+
+
         this.displayComments();
       }
     },
@@ -83,8 +91,7 @@ var app = app || {};
     editPost: function(e){
       e.preventDefault();
 
-      if (!app.auth.loggedIn()) return;
-
+      if (!app.auth.loggedIn()) return false;
 
       // replace the idea title and description with text
       // fields

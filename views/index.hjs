@@ -55,7 +55,11 @@
 
         <div class="idea-actions-bar">
           <span class="bar-item">{{ comments.length }} comments</span>
+
+          {{#canedit}}
           <span class="bar-item"><a id="edit-post" href="#">Edit</a></span>
+          {{/canedit}}
+
           <span class="bar-item date-author">Submitted on {{ date }} by {{ author }}</span>
         </div>
       {{/loaded}}

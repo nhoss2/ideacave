@@ -52,7 +52,11 @@ var app = app || {};
     },
 
     submitComment: function(e){
+
       e.preventDefault();
+
+      if (!app.auth.loggedIn()) return;
+
       var content = this.$el.find('#new-comment textarea').val();
 
       if (content == '') return;

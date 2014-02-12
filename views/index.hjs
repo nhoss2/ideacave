@@ -111,7 +111,7 @@
     <div id="register-form">
       <h1>Register</h1>
       <p id="auth-error">{{ errorMessage }}</p>
-      <input type="text" id="users-name" placeholder="name"/>
+      <input type="text" id="users-name" placeholder="username"/>
       <input type="text" id="email-address" placeholder="email address"/>
       <input type="password" id="password" placeholder="password"/>
       <a href="#" id="register-button">Submit</a>

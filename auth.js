@@ -76,9 +76,9 @@ module.exports = {
     }
 
     // check if user exists already
-    find({email: email}, function(user){
+    find({ $or: [{email: email}, {name: name}] }, function(user){
       if (user) {
-        return callback('User with this email address already exists');
+        return callback('User with this email address or username already exists');
       } else {
         // create password hash and save new user into database
         scrypt.passwordHash(password, 0.1, function(err, hash){

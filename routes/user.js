@@ -31,6 +31,11 @@ module.exports = {
    */
 
   newAdmin: function(req, res){
+
+    // for now, if there is already an admin account, dont let
+    // any new admin accounts get created
+    if (jsonConfig.config.installed) return res.redirect('/');
+
     auth.newUser(req.param('username'), req.param('name'), req.param('password'), function(err, user){
       if (err){
         req.flash('error', err);

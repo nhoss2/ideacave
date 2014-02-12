@@ -7,13 +7,15 @@
   come up with a easy to use method for parts of the app
   that need users to be logged in
 
-- make sure server side that any put request to update a 
-  model is being checked if user is allowed to update model.
-
 - make sure usernames are unique when registering
 
-- update model on front end after it has been edited
+- bug where refreshing while currently on a page causes the
+  path to reset to "/". Also, when the path has reset to "/",
+  clicking on a link to load the index page does not work.
 
 done:
 - render previous comments
 - have ability to save comments. 
+- make sure server side that any put request to update a 
+  model is being checked if user is allowed to update model.
+- update model on front end after it has been edited

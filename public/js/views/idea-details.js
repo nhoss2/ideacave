@@ -10,6 +10,7 @@ var app = app || {};
     events: function(){
       return {
         'click a#edit-post': 'editPost',
+        'click a#delete-post': 'deletePost'
       }
     },
 
@@ -39,7 +40,6 @@ var app = app || {};
     },
 
     modelChange: function(){
-      console.log(JSON.stringify(this.model.toJSON()));
       this.render();
     },
 
@@ -52,10 +52,9 @@ var app = app || {};
         this.model.set({loaded: true});
 
         // check if the post was created by the logged in
-        // user and if so, show the edit button
+        // user and if so, show the edit and delete buttons
         if (app.auth.name === this.model.get('author')){
-          console.log('can edit');
-          this.model.set({canedit: true});
+          this.model.set({isauthor: true});
         }
 
 
@@ -105,6 +104,16 @@ var app = app || {};
         self.render();
       });
 
+    },
+
+    deletePost: function(e){
+      e.preventDefault();
+
+      if (!app.auth.loggedIn()) return false;
+
+      var modalView = new DeleteModalView();
+
+      app.modal.show(modalView.el);
     }
 
   });
@@ -145,6 +154,30 @@ var app = app || {};
       this.trigger('remove');
       this.remove();
     }
+
+  });
+
+  var DeleteModalView = Backbone.View.extend({
+
+    template: Mustache.compile($('#delete-post-template').html()),
+
+    events: function(){
+      return {
+        'click #confirm-delete': 'deletePost',
+        'click #cancel-delete': 'cancel'
+      }
+    },
+
+    initialize: function(){
+      console.log('i');
+      this.render();
+    },
+
+    render: function(){
+      this.$el.html(this.template());
+      return this;
+    }
+
 
   });
 })();
